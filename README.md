@@ -28,9 +28,8 @@ const reducer = (state, action) => {
   };
   
 - Calling dispatch in return
-<button onClick={ ()=>{
-        //setCounter(counter+1);
-        //setShowText(!showText);
+- <button onClick={ ()=>{
+        
         dispatch({type: "INCREMENT"})
         dispatch( {type: "toggleShowText"})
       }}>
