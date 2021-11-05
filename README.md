@@ -27,7 +27,15 @@ const reducer = (state, action) => {
     };
   };
   
-  
+- Calling dispatch in return
+<button onClick={ ()=>{
+        //setCounter(counter+1);
+        //setShowText(!showText);
+        dispatch({type: "INCREMENT"})
+        dispatch( {type: "toggleShowText"})
+      }}>
+      
+      
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
