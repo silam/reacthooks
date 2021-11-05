@@ -1,3 +1,33 @@
+
+
+# codes for Reach Hooks using useReducer
+What you need to do is:
+
+
+- Import useReducer
+
+import React, {useReducer} from 'react';
+
+- create state and dispatch from useReducer
+
+const [state, dispatch] = useReducer(reducer, 
+      {count: 0, showText: true});
+      
+- Create a reducer function, passing state and action
+Depends on the type of action, we return diffrent state
+
+const reducer = (state, action) => {
+    switch (action.type) {
+      case "INCREMENT" : 
+        return {count: state.count + 1, showText: state.showText};
+      case "toggleShowText" :
+        return {count: state.count, showText: !state.showText};
+      default:
+        return state;
+    };
+  };
+  
+  
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
