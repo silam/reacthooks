@@ -1,63 +1,38 @@
 import './App.css';
-import React, {useState, useReducer} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from "axios";
 
-const App = () => {
-  //let counter = 1;
-  const [counter, setCounter] = useState(0);
-  const [inputValue, setInputValue] = useState("SiLam");
-  const [showText, setShowText] = useState(true);
-
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "INCREMENT" : 
-        return {count: state.count + 1, showText: state.showText};
-      case "toggleShowText" :
-        return {count: state.count, showText: !state.showText};
-      default:
-        return state;
-    };
-  };
-
-  const [state, dispatch] = useReducer(reducer, 
-      {count: 0, showText: true});
+function App() {
 
 
-  const Increment = () => {
-    //counter = counter + 1;
-    setCounter(counter + 1);
-    console.log(counter);
-  }
+  const [data, setData] = useState("");
+  const [count, setCount] = useState(0);
 
-  let onChange= (event) => {
-    const newValue = event.target.value;
-    setInputValue(newValue);
-
-  }
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/comments")
+      .then((response) => 
+      {
+          setData(response.data[0].email);
+          console.log("API Called");
+      })
+  }, []); // [] make call useEffect once
 
 
 
-  // return <div> 
-  //     {/* {counter} <button onClick={Increment}>Increment</button> */}
-  //     <input placeholder="enter something..." onChange={onChange} />
-  //     {inputValue}
-  //     </div>
+  return <div>
+    Hello World
+    <h1>{data}</h1>
+    <h1>{count}</h1>
 
-  return (
-    <div>
-      <h1>{state.count}</h1>
-      <button onClick={ ()=>{
-        //setCounter(counter+1);
-        //setShowText(!showText);
-        dispatch({type: "INCREMENT"})
-        dispatch( {type: "toggleShowText"})
-      }}>
-        Click Here
-      </button>
+    <button onClick={() => {
 
-      {state.showText && <p>This is a text</p>}
-    </div>
-  )
+      setCount(count + 1);
+      
+    }}>
+      Click
+    </button>
+  </div>
+
 };
-
 
 export default App;
