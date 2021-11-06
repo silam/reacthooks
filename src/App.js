@@ -1,20 +1,27 @@
 import './App.css';
-import React, {useRef} from 'react';
+import React, {useRef, useLayoutEffect, useEffect} from 'react';
 
 function App() {
   const inputRef = useRef(null);
 
-  const onClick = () => {
-    console.log(inputRef.current.value)
+  // useLayouteffect called first before anything else is rendered
+  useLayoutEffect(() => {
+    console.log(inputRef.current.value);
 
-    inputRef.current.focus();
+    
+  }, []);
 
-    inputRef.current.value = "";
-  }
+  // useEffect is called after anything else is rendered
+  useEffect(() => {
+    inputRef.current.value = "Hello"
+  }, []);
+
+
+
+
   return (
     <div>
-      <input ref={inputRef} />
-      <button onClick={onClick}>Change me</button>
+      <input ref={inputRef} value="Si Lam" />
     </div>
   )
 }

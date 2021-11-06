@@ -1,4 +1,25 @@
 
+
+
+# codes for using useLayoutEffect
+
+- import useLayoutEffect from react
+- create functions for useLayoutEffect
+
+
+ // useLayouteffect called first before anything else is rendered
+  useLayoutEffect(() => {
+    console.log(inputRef.current.value);
+
+    
+  }, []);
+
+  // useEffect is called after anything else is rendered
+  useEffect(() => {
+    inputRef.current.value = "Hello"
+  }, []);
+
+
 # codes for using useRef
 
 - import useRef from react
@@ -13,7 +34,7 @@
  - use the current reference by specifying 
     ref.current.value
 
-    
+
 
 # codes for using useEffect
 - Import useEffect from react;
