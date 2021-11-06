@@ -1,4 +1,20 @@
 
+# codes for using useRef
+
+- import useRef from react
+
+- Call useRef 
+    const inputRef = useRef(null);
+
+- Reference useRef variable in Document
+
+ <input ref={inputRef} />
+
+ - use the current reference by specifying 
+    ref.current.value
+
+    
+
 # codes for using useEffect
 - Import useEffect from react;
 
