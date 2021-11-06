@@ -1,5 +1,25 @@
 
+# codes for using useEffect
+- Import useEffect from react;
 
+- Define useEffect function to pull data from the internet
+
+useEffect(() => {
+     axios.get("https://jsonplaceholder.typicode.com/comments")
+       .then((response) => 
+       {
+           setData(response.data[0].email);
+           console.log("API Called");
+       })
+   }, []); // [] make call useEffect once
+
+- On the onclick function, 
+   <button onClick={() => {
+
+       setCount(count + 1);
+
+     }}>
+      
 # codes for Reach Hooks using useReducer
 What you need to do is:
 
