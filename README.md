@@ -1,3 +1,12 @@
+# Codes for usecontext in React
+
+- Create a context
+export const AppContext = createContext(null);
+
+- then use provider from context and passing array variables into the child components
+<AppContext.Provider value={{ username, setUserName }}>
+          <Login /> <User />
+</AppContext.Provider>
 
 # Codes for ussing useImperativHandle
  - when you want parent button onclick to CALL a function in child component
@@ -20,7 +29,7 @@
 
       }}>Button from Parent</button>
       <Button ref={buttonRef}></Button>
-      
+
 
 # codes for using useLayoutEffect
 

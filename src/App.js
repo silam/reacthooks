@@ -1,23 +1,14 @@
 import './App.css';
-import React, {useRef} from 'react';
-import Button from './Button';
+import UseContextReact  from './UseContext/UseContext';
 
 function App() {
-  
-
-
-  const buttonRef = useRef(null);
-
   return (
-    <div>
-      <button onClick={()=>
-      {
-        buttonRef.current.alterToggle();
-
-      }}>Button from Parent</button>
-      <Button ref={buttonRef}></Button>
+    <div className="App">
+      <UseContextReact />
     </div>
-  )
+  );
 }
+
+
 
 export default App;
