@@ -1,27 +1,21 @@
 import './App.css';
-import React, {useRef, useLayoutEffect, useEffect} from 'react';
+import React, {useRef} from 'react';
+import Button from './Button';
 
 function App() {
-  const inputRef = useRef(null);
-
-  // useLayouteffect called first before anything else is rendered
-  useLayoutEffect(() => {
-    console.log(inputRef.current.value);
-
-    
-  }, []);
-
-  // useEffect is called after anything else is rendered
-  useEffect(() => {
-    inputRef.current.value = "Hello"
-  }, []);
+  
 
 
-
+  const buttonRef = useRef(null);
 
   return (
     <div>
-      <input ref={inputRef} value="Si Lam" />
+      <button onClick={()=>
+      {
+        buttonRef.current.alterToggle();
+
+      }}>Button from Parent</button>
+      <Button ref={buttonRef}></Button>
     </div>
   )
 }

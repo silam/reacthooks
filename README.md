@@ -1,5 +1,26 @@
 
+# Codes for ussing useImperativHandle
+ - when you want parent button onclick to CALL a function in child component
+ - import forwardRef and useImperativeHandle in the child
+ - Define in Child
 
+ useImperativeHandle(ref, ()=> ({
+        alterToggle() {
+            setToggle(!toggle);
+        },
+    }));
+
+- In the parent component:
+ Pass ref to child component
+ then call the child function from the Ref
+
+ <button onClick={()=>
+      {
+        buttonRef.current.alterToggle();
+
+      }}>Button from Parent</button>
+      <Button ref={buttonRef}></Button>
+      
 
 # codes for using useLayoutEffect
 
