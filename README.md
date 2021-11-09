@@ -1,3 +1,9 @@
+
+
+# Codes for useMemo in React
+
+const getLongestName = useMemo(() => findLongestName(data), [toggle]);
+
 # Codes for usecontext in React
 
 - Create a context
