@@ -1,4 +1,12 @@
+# Codes for useCallback in React
 
+const returnComment = useCallback(
+        (name) => {
+            return data + name;
+        },
+        [data]
+    );
+    
 
 # Codes for useMemo in React
 
